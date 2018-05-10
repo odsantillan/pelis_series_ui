@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>INICIO</title>
+	<h1>SISTEMA DE PELICULAS MAJO</h1>
+</head>
+<body>
+
+	<div id="main">
+		<ul>
+			<li v-for="item in peliculas" v-text="item" ></li>
+		</ul>
+		<input type="text" v-model="name" v-on:keyup.enter="addPelicula">
+	</div>
+
+<script  src = "https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js" ></script>
+
+<script type="text/javascript">
+  new Vue({
+  	el:'#main',
+  	data: 
+  	{
+  		peliculas: ['Nemo','Narnia','Troya','Tron','Advengers']
+  	},
+  	name: '',
+  	methods: 
+  		{
+  			addPelicula: function()
+  			{
+  				this.peliculas.push(this.name);
+  				this.name='';
+  			}	
+  		}
+  });
+</script>
+
+</body>
+</html>
